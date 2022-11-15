@@ -36,7 +36,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   double _inputuser = 0;
   double _kevin = 0;
   double _reamur = 0;
@@ -47,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double newvalue = 0;
   List<String> listViewItem = <String>[];
   double _value = 1;
-
+  double output = 0;
   var listItem = [
     "Kelvin",
     "Reamur",
@@ -63,19 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
         _result = (4 / 5) * _inputuser;
       }
     });
+    output = _result;
     String hasil = (newValue + " : " + _result.round().toString());
     listViewItem.add(hasil);
   }
 
-  void _incrementCounter() {
+  void pSuhu() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      _inputuser = _value;
+
+      if (newValue == "Kelvin") {
+        _result = _inputuser + 273;
+      } else {
+        _result = (4 / 5) * _inputuser;
+      }
     });
+    output = _result;
   }
 
   @override
@@ -95,10 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: Column(
           children: <Widget>[
+            // Container(
+            //   child: Input(
+            //     myController: inputController,
+            //   ),
+            // ),
             Container(
-              // child: Input(
-              //   myController: inputController,
-              // ),
               child: Slider(
                 value: _value.roundToDouble(),
                 label: _value.roundToDouble().toString(),
@@ -106,7 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 max: 100.0,
                 divisions: 100,
                 onChanged: (double value) {
-                  setState(() => _value = value);
+                  setState(() {
+                    _value = value;
+                    pSuhu();
+                  });
                 },
               ),
             ),
@@ -136,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
             ),
             Result(
-              result: _result,
+              result: output,
             ),
             SizedBox(
               child: Container(
