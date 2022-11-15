@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MyHomePage(title: 'BAB 4 STATEFULL WIDGET DAN MAP'),
+      home: const MyHomePage(title: ' '),
     );
   }
 }
@@ -44,16 +44,18 @@ class _MyHomePageState extends State<MyHomePage> {
   String newValue = "Kelvin";
   double _result = 0;
   String changeValue = "";
-
+  double newvalue = 0;
   List<String> listViewItem = <String>[];
+  double _value = 1;
 
   var listItem = [
     "Kelvin",
     "Reamur",
   ];
+
   void perhitunganSuhu() {
     setState(() {
-      _inputuser = double.parse(inputController.text);
+      _inputuser = _value;
 
       if (newValue == "Kelvin") {
         _result = _inputuser + 273;
@@ -61,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
         _result = (4 / 5) * _inputuser;
       }
     });
-    listViewItem.add(_result.toString());
+    String hasil = (newValue + " : " + _result.round().toString());
+    listViewItem.add(hasil);
   }
 
   void _incrementCounter() {
@@ -93,8 +96,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Container(
-              child: Input(
-                myController: inputController,
+              // child: Input(
+              //   myController: inputController,
+              // ),
+              child: Slider(
+                value: _value.roundToDouble(),
+                label: _value.roundToDouble().toString(),
+                min: 0.0,
+                max: 100.0,
+                divisions: 100,
+                onChanged: (double value) {
+                  setState(() => _value = value);
+                },
               ),
             ),
             Container(
@@ -181,9 +194,9 @@ class Input extends StatelessWidget {
   }) : super(key: key);
 
   final TextEditingController myController;
-
   @override
   Widget build(BuildContext context) {
+    // implement textformfield
     return TextFormField(
       controller: myController,
       decoration: InputDecoration(hintText: "Masukkan Nilai "),
