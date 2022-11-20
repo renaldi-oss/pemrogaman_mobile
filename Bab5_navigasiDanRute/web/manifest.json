@@ -1,6 +1,6 @@
 {
-    "name": "navigasi_rute",
-    "short_name": "navigasi_rute",
+    "name": "flutter_shopping",
+    "short_name": "flutter_shopping",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

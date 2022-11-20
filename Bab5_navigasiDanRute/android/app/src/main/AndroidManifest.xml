@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.navigasi_rute">
+    package="com.example.flutter_shopping">
    <application
-        android:label="navigasi_rute"
+        android:label="flutter_shopping"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

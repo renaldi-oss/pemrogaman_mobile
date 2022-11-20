@@ -1,4 +1,4 @@
-package com.example.navigasi_rute
+package com.example.flutter_shopping
 
 import io.flutter.embedding.android.FlutterActivity
 
