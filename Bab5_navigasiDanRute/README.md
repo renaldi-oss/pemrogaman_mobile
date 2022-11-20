@@ -2,5 +2,5 @@
 
 Oleh Reynaldi Fakhri Pratama
 
-![ss](https://github.com/renaldi-oss/pemrogaman_mobile/blob/master/Bab4_konverterSuhu/1.PNG?raw=true "screenshot")
-![ss](https://github.com/renaldi-oss/pemrogaman_mobile/blob/master/Bab4_konverterSuhu/2.PNG?raw=true "screenshot")
+![ss](https://github.com/renaldi-oss/pemrogaman_mobile/blob/master/Bab5_navigasiDanRute/1.PNG?raw=true "screenshot")
+![ss](https://github.com/renaldi-oss/pemrogaman_mobile/blob/master/Bab5_navigasiDanRute/2.PNG?raw=true "screenshot")
