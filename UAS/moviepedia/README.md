@@ -1,16 +1,10 @@
-# movieopedia
->Flutter app to view details of current trending, top-rated and popular tv shows.
->>Three widgets in the project are:
+# Moviepedia
+>aplikasi flutter untuk melihat detail dari film dan tv show yang sedang tren, terbaik dan populer.
+>>Aplikasi ini dibuat dengan menggunakan flutter dan API dari themoviedb.org
+>>Aplikasi ini dibuat untuk memenuhi tugas akhir mata kuliah Pemrograman Mobile
+>>ketiga widget yang ada pada aplikasi ini adalah:
 >>>1. Trending Movies
 >>>2. Top Rated Movies
 >>>3. Popular TV shows
 
-<b>First Screen (with two widgets):</b> <br/>
-<img src="FirstScreen.png" width=30% height=30%> <br/>
-
-<b>Second Screen:</b> <br/>
-<img src="SecondScreen.png" width=30% height=30%> <br/>
-
-<b>Third Widget:</b> <br/>
-<img src="ThirdWidget.png" width=30% height=30%> <br/>
-
+>## dibuat oleh: Reynaldi Fakhri Pratama
