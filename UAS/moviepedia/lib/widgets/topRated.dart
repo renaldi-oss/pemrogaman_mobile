@@ -3,8 +3,9 @@ import 'package:Moviepedia/details.dart';
 import 'package:Moviepedia/utils/text.dart';
 
 class TopRated extends StatelessWidget {
+  // tipe data final digunakan untuk menetapkan nilai yang tidak dapat diubah
   final List topRated;
-
+  // constructor untuk menginisialisasi nilai dari variabel topRated
   const TopRated({super.key, required this.topRated});
 
   @override
@@ -14,16 +15,20 @@ class TopRated extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // menggunakan widget ModifiedText untuk mengubah properti text
           ModifiedText(
             text: 'Top Rated Movies',
             color: Colors.white,
             size: 20,
           ),
+          // sizedbox digunakan untuk memberikan jarak antar widget
           SizedBox(
             height: 10,
           ),
+          // container untuk menampung widget listview builder
           Container(
             height: 270,
+            // list view builder digunakan untuk menampilkan data top rated movies
             child: ListView.builder(
                 itemCount: topRated.length,
                 scrollDirection: Axis.horizontal,
@@ -32,8 +37,10 @@ class TopRated extends StatelessWidget {
                     // Using the Navigator API to navigate to 2nd screen
                     // to get details of a particular top-rated movie
                     onTap: () {
+                      // navigator.push digunakan untuk navigasi ke halaman kedua
                       Navigator.push(
                           context,
+                          // material page digunakan untuk menampilkan halaman kedua
                           MaterialPageRoute(
                               builder: (context) => Details(
                                   name: topRated[index]['title'],

@@ -12,6 +12,7 @@ class TV extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
+        // crossAxisAlignment digunakan untuk menempatkan widget secara horizontal
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ModifiedText(

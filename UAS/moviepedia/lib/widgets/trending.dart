@@ -39,6 +39,9 @@ class TrendingMovies extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => Details(
+                                  // didapatkan dari data trending movies yang
+                                  // diambil dari API
+                                  // sebagai patokan untuk menampilkan detail
                                   name: trending[index]['title'],
                                   desc: trending[index]['overview'],
                                   bannerurl: 'https://image.tmdb.org/t/p/w500' +

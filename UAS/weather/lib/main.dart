@@ -37,7 +37,8 @@ class _HomeState extends State<Home> {
   // patokan kota yang akan ditampilkan pada saat pertama kali membuka aplikasi
   var cityName = "Malang";
   // API Key dari OpenWeatherMap
-  var apiKey = "&imperial&appid=2bb0aecc9fa16c8d63acc3941ab7024f";
+  // var apiKey = "&imperial&appid=2bb0aecc9fa16c8d63acc3941ab7024f";
+  var apiKey = "&imperial&appid=04222d1d06d7f2b60cfaccee72d7c9b4";
   // fungsi untuk mengambil data dari API OpenWeatherMap
   // future adalah sebuah fungsi yang akan mengembalikan nilai
   // pada saat prosesnya selesai dilakukan

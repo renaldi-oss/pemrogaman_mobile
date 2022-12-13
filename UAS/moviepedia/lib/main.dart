@@ -48,24 +48,34 @@ class _HomeState extends State<Home> {
     super.initState();
   }
 
+  // fungsi untuk memuat data trending movies, top rated movies, dan tv
+  // async dan await digunakan untuk menunggu data selesai diambil dari API
+  // sebelum dilanjutkan ke proses selanjutnya
   loadMovies() async {
+    // membuat objek tmdb dengan konfigurasi log yang diinginkan
     TMDB tmdbWithCustomLogs = TMDB(ApiKeys(apiKey, readAccessToken),
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
-
+    // memanggil fungsi getTrending, getTopRated, dan getPopular dari objek tmdb
+    // map digunakan untuk menampung data yang diambil dari API
     Map trendingResults = await tmdbWithCustomLogs.v3.trending.getTrending();
     Map topRatedResults = await tmdbWithCustomLogs.v3.movies.getTopRated();
     Map tvResults = await tmdbWithCustomLogs.v3.tv.getPopular();
-    print(trendingResults);
+
+    // print(trendingResults);
+    // set state untuk mengubah data yang ada di list ke data yang baru
     setState(() {
       trendingMovies = trendingResults['results'];
       topRatedMovies = topRatedResults['results'];
       tv = tvResults['results'];
     });
-    print(trendingMovies);
+    // print(trendingMovies);
   }
 
+  // widget yang akan ditampilkan
+  // build context digunakan untuk mengatur tampilan widget
   @override
   Widget build(BuildContext context) {
+    // Scaffold digunakan untuk menampilkan AppBar dan Body
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -76,6 +86,7 @@ class _HomeState extends State<Home> {
             size: 24,
           ),
         ),
+        // listview digunakan untuk menampilkan widget secara vertikal
         body: ListView(
           children: [
             TrendingMovies(trending: trendingMovies),
